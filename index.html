@@ -237,7 +237,7 @@ canvas {
 
         <div class="game-button" id="gbBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/257.png" alt="Google Baseball"><div>Google Baseball</div></div>
         <div class="game-button" id="tr2Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/10.png" alt="Temple Run 2"><div>Temple Run 2</div></div>
-                <div class="game-button" id="tfBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/108.png" alt="Tiny Fishing"><div>Tiny Fishing</div></div>
+        <div class="game-button" id="tfBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/108.png" alt="Tiny Fishing"><div>Tiny Fishing</div></div>
         <div class="game-button" id="ts3sBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/201.png" alt="Time Shooter 3 SWAT"><div>Time Shooter 3 SWAT</div></div>
         <div class="game-button" id="undertaleBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/184.png" alt="Undertale"><div>Undertale</div></div>
     </div>
@@ -292,10 +292,12 @@ const proxyLinks = [
     "https://jpzxj04sr45n.matribhumimf.com.np/",
     "https://hj26ej95p3iz.netseclabs.gr/"
 ];
-function openRandomProxy() {
+
+// Proxy listener - open in new tab
+document.getElementById('pizzaBtn').addEventListener('click', () => {
     const link = proxyLinks[Math.floor(Math.random() * proxyLinks.length)];
-    window.location.href = link;
-}
+    window.open(link, '_blank'); // opens in new tab
+});
 
 // Games listeners
 document.getElementById('crazyCarsBtn').addEventListener('click', () => { openGame('https://rawcdn.githack.com/bubbls/UGS-Assets/df3f505bea1fcfbe3f7e0e64c384e9ec15b47ee1/crazy%20cars/index.html#topvaz'); });
@@ -328,9 +330,6 @@ document.getElementById('tr2Btn').addEventListener('click', () => { openGame('ht
 document.getElementById('tfBtn').addEventListener('click', () => { openGame('https://auresowner.github.io/TS3S/TF.html'); });
 document.getElementById('ts3sBtn').addEventListener('click', () => { openGame('https://auresowner.github.io/TS3S/TS3S.html'); });
 document.getElementById('undertaleBtn').addEventListener('click', () => { openGame('https://auresowner.github.io/TS3S/UDT.html'); });
-
-// Proxy listener
-document.getElementById('pizzaBtn').addEventListener('click', openRandomProxy);
 </script>
 <script src="/active/uv/uv.bundle.js" charset="UTF-8" defer></script>
 <script src="/active/uv/uv.config.js" charset="UTF-8" defer></script>
@@ -339,7 +338,3 @@ document.getElementById('pizzaBtn').addEventListener('click', openRandomProxy);
 <script src="/active/index.js" charset="UTF-8" defer></script>
 </body>
 </html>
-
-
-
-
