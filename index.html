@@ -144,7 +144,7 @@ canvas {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 65%;          /* lowered to push it down */
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -235,6 +235,11 @@ canvas {
         <div class="game-button" id="bloodMoneyBtn">
             <img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/454.png" alt="BLOODMONEY!">
             <div>BLOODMONEY!</div>
+        </div>
+        <!-- FNAF Game Added -->
+        <div class="game-button" id="fnafBtn">
+            <img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/38.png" alt="FNAF">
+            <div>FNAF</div>
         </div>
     </div>
 </div>
@@ -348,6 +353,9 @@ document.getElementById('rainbowObbyBtn').addEventListener('click', () => {
 });
 document.getElementById('bloodMoneyBtn').addEventListener('click', () => {
     openGame('https://auresowner.github.io/BMY/BMY.html');
+});
+document.getElementById('fnafBtn').addEventListener('click', () => {
+    openGame('https://auresowner.github.io/FNAF1/FNAF1.html');
 });
 </script>
 <script src="/active/uv/uv.bundle.js" charset="UTF-8" defer></script>
