@@ -6,6 +6,7 @@
 <title>Google</title>
 <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/2048px-Google_%22G%22_logo.svg.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Epunda+Slab:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 <style>
 body {
     margin: 0;
@@ -17,7 +18,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 .menu {
     width: calc(100% - 20px);
     height: 60px;
@@ -35,7 +35,6 @@ body {
     z-index: 100;
     box-sizing: border-box;
 }
-
 .menu a {
     color: #fff;
     text-decoration: none;
@@ -44,9 +43,7 @@ body {
     transition: color 0.2s;
     cursor: pointer;
 }
-
 .menu a:hover { color: #ccc; }
-
 .content {
     padding-top: 100px;
     display: flex;
@@ -61,7 +58,6 @@ body {
     flex: 1;
     padding-bottom: 100px;
 }
-
 .welcome-text {
     font-family: 'Epunda Slab', serif;
     font-weight: 700;
@@ -70,7 +66,6 @@ body {
     margin-bottom: 20px;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
 }
-
 .description {
     font-family: 'Epunda Slab', serif;
     font-style: italic;
@@ -79,7 +74,6 @@ body {
     line-height: 1.6;
     margin-bottom: 40px;
 }
-
 .footer {
     font-family: 'Epunda Slab', serif;
     font-size: 16px;
@@ -88,7 +82,6 @@ body {
     padding: 20px;
     border-top: 1px solid rgba(255,255,255,0.2);
 }
-
 canvas {
     position: fixed;
     top: 0;
@@ -98,11 +91,8 @@ canvas {
     z-index: 0;
     pointer-events: none;
 }
-
 .page { display: none; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; flex: 1; }
 .active { display: flex; }
-
-/* Games page grid fixed to 5 buttons per row */
 .game-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -110,7 +100,6 @@ canvas {
     width: 100%;
     justify-items: center;
 }
-
 .game-button {
     background-color: #222;
     border: 1px solid #fff;
@@ -122,18 +111,15 @@ canvas {
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .game-button img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 5px;
 }
-
 .game-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
 }
-
 @media (max-width: 1000px) {
     .game-grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -142,7 +128,6 @@ canvas {
     .welcome-text { font-size: 48px; }
     .description { font-size: 16px; padding: 0 10px; }
 }
-
 .search-form {
     width: 100%;
     max-width: 500px;
@@ -155,7 +140,6 @@ canvas {
     transform: translate(-50%, -50%);
     z-index: 10;
 }
-
 .search-input {
     flex: 1;
     padding: 12px 18px;
@@ -168,7 +152,6 @@ canvas {
     box-shadow: 0 0 10px rgba(255,255,255,0.1);
     transition: all 0.3s ease;
 }
-
 .search-input:focus {
     border-color: #fff;
     box-shadow: 0 0 15px #fff, 0 0 30px #fff;
@@ -177,7 +160,6 @@ canvas {
 </head>
 <body>
 <canvas id="particles"></canvas>
-
 <div class="menu">
     <a id="homeLink">Home</a>
     <a id="gamesLink">G4m3s</a>
@@ -186,15 +168,18 @@ canvas {
 
 <!-- Home Page -->
 <div id="homePage" class="content page active">
-    <div class="welcome-text">Welcome To Aerus</div>
+    <div class="welcome-text">
+        <span class="material-symbols-outlined" style="font-size:72px; color:#fff;">
+            home
+        </span>
+    </div>
     <div class="description">
         This Website Is Full Of Stuff I Wont Say Because This Website Would Be Blocked By Securly,
         Lightspeed, ETC. So If Your New, Please Enjoy Yourself By Searching What You Wanna Do On The Menu.
     </div>
-
     <form id="uv-form" class="search-form">
-      <input id="uv-search-engine" value="https://duckduckgo.com/&q=%s" type="hidden"/> 
-      <input id="uv-address" type="text" placeholder="Search DuckDuckGo or type a URL" class="search-input"/>
+        <input id="uv-search-engine" value="https://duckduckgo.com/&q=%s" type="hidden"/> 
+        <input id="uv-address" type="text" placeholder="Search DuckDuckGo or type a URL" class="search-input"/>
     </form>
 </div>
 
@@ -202,39 +187,32 @@ canvas {
 <div id="gamesPage" class="content page">
     <div class="welcome-text">G4m3s</div>
     <div class="description">In Here We Got G4m3s If You Know What We Mean! (WARNING: GAMES DONT SAVE DATA!)</div>
-    
     <div class="game-grid">
-        <!-- Existing + new games -->
         <div class="game-button" id="crazyCarsBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/331.png" alt="Crazy Cars"><div>Crazy Cars</div></div>
         <div class="game-button" id="lolBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/58.png" alt="1v1.lol"><div>1v1.lol</div></div>
         <div class="game-button" id="aswcBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/435.png" alt="A Small World Cup"><div>A Small World Cup</div></div>
         <div class="game-button" id="angryBirdsBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/63.png" alt="Angry Birds"><div>Angry Birds</div></div>
         <div class="game-button" id="bouncemastersBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/437.png" alt="Bouncemasters"><div>Bouncemasters</div></div>
-        
         <div class="game-button" id="candyCrushBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/171.png" alt="Candy Crush"><div>Candy Crush</div></div>
         <div class="game-button" id="drawJoustBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/387.png" alt="Draw Joust"><div>Draw Joust</div></div>
         <div class="game-button" id="driveMadBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/35.png" alt="Drive Mad"><div>Drive Mad</div></div>
         <div class="game-button" id="rainbowObbyBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/307.png" alt="Rainbow Obby"><div>Rainbow Obby</div></div>
         <div class="game-button" id="bloodMoneyBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/454.png" alt="BLOODMONEY!"><div>BLOODMONEY!</div></div>
-
         <div class="game-button" id="mc1122Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/182.png" alt="Minecraft 1.12.2"><div>Minecraft 1.12.2</div></div>
         <div class="game-button" id="moneyRushBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/400.png" alt="Money Rush"><div>Money Rush</div></div>
         <div class="game-button" id="mx3m2Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/97.png" alt="Motor X3M 2"><div>Motor X3M 2</div></div>
         <div class="game-button" id="mx3m3Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/98.png" alt="Motor X3M 3"><div>Motor X3M 3</div></div>
         <div class="game-button" id="mx3mppBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/124.png" alt="Motor X3M Pool Party"><div>Motor X3M Pool Party</div></div>
-
         <div class="game-button" id="mx3msBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/99.png" alt="Motor X3M Spooky"><div>Motor X3M Spooky</div></div>
         <div class="game-button" id="pvzBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/232.png" alt="Plants vs Zombies"><div>Plants vs Zombies</div></div>
         <div class="game-button" id="run3Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/177.png" alt="Run 3"><div>Run 3</div></div>
         <div class="game-button" id="ragdollArchersBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/186.png" alt="Ragdoll Archers"><div>Ragdoll Archers</div></div>
         <div class="game-button" id="fnafBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/38.png" alt="FNAF"><div>FNAF</div></div>
-
         <div class="game-button" id="fnaf2Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/39.png" alt="FNAF 2"><div>FNAF 2</div></div>
         <div class="game-button" id="fnaf3Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/40.png" alt="FNAF 3"><div>FNAF 3</div></div>
         <div class="game-button" id="fnaf4Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/41.png" alt="FNAF 4"><div>FNAF 4</div></div>
         <div class="game-button" id="fnaf4hlwnBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/428.png" alt="FNAF 4 Halloween"><div>FNAF 4 Halloween</div></div>
         <div class="game-button" id="gdlBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/27.png" alt="Geometry Dash Lite"><div>Geometry Dash Lite</div></div>
-
         <div class="game-button" id="gbBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/257.png" alt="Google Baseball"><div>Google Baseball</div></div>
         <div class="game-button" id="tr2Btn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/10.png" alt="Temple Run 2"><div>Temple Run 2</div></div>
         <div class="game-button" id="tfBtn"><img src="https://cdn.jsdelivr.net/gh/gn-math/covers@main/108.png" alt="Tiny Fishing"><div>Tiny Fishing</div></div>
@@ -303,7 +281,7 @@ const proxyLinks = [
 // Proxy listener - open in new tab
 document.getElementById('pizzaBtn').addEventListener('click', () => {
     const link = proxyLinks[Math.floor(Math.random() * proxyLinks.length)];
-    window.open(link, '_blank'); // opens in new tab
+    window.open(link, '_blank');
 });
 
 // Games listeners
@@ -345,6 +323,7 @@ document.getElementById('borBtn').addEventListener('click', () => { openGame('ht
 document.getElementById('cookiecBtn').addEventListener('click', () => { openGame('https://auresowner.github.io/BR1/CookieC.html'); });
 document.getElementById('badpBtn').addEventListener('click', () => { openGame('https://auresowner.github.io/BR1/BP.html'); });
 </script>
+
 <script src="/active/uv/uv.bundle.js" charset="UTF-8" defer></script>
 <script src="/active/uv/uv.config.js" charset="UTF-8" defer></script>
 <script src="/active/register-sw.js" charset="UTF-8" defer></script>
@@ -352,6 +331,3 @@ document.getElementById('badpBtn').addEventListener('click', () => { openGame('h
 <script src="/active/index.js" charset="UTF-8" defer></script>
 </body>
 </html>
-
-
-
